@@ -1,0 +1,26 @@
+.card {
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+.icon-cart {
+    color: green;
+    cursor: pointer;
+    border: 1px solid green;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.summary-price {
+    font-size: 1.125rem;
+}
+
+.card-img-top {
+    max-height: 7rem;
+    width: auto !important;
+    /* margin-left: 25%; */
+    margin-top: 1rem;
+}

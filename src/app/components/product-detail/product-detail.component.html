@@ -1,0 +1,103 @@
+<app-navigation></app-navigation>
+<p-toast position="top-right" class="custom-toast"></p-toast>
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4">{{product?.productName}}
+  </h1>
+
+  <!-- Portfolio Item Row -->
+  <div class="row">
+
+    <div class="col-md-8">
+      <img style="max-width: 25rem;" class="img-fluid" [src]="product?.image" alt="">
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="my-3">{{product?.productName}}</h3>
+      <p class="text-justify">{{product?.description}}</p>
+      <hr>
+      <div>
+        <div class="form-group">
+          <div class="row">
+            <label for="" class="col-sm-2 col-form-label mr-3">Cantidad: </label>
+            <div class="col-sm-8">
+              <div class="">
+                  <button class="btn btn-secondary" [disabled]="product?.stock == 0" (click)="reduceQuantity()">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <span class="quantity">
+                    {{product?.stock}}
+                  </span>
+                  <button class="btn btn-secondary" [disabled]="product?.stock == 0" (click)="addQuantity()">
+                    <i class="fas fa-plus"></i>
+                  </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4>Precio: <span class="prize">{{product?.price | number}} pts</span></h4>
+        </div>
+        <div class="">
+          <button class="btn btn-outline-success btn-block" (click)="addCart()"><i class="fas fa-shopping-cart"></i> Agregar al
+            carrito</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+  <!-- Related Projects Row -->
+  <!-- <h3 class="my-4">Related Projects</h3>
+
+  <div class="row">
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </a>
+    </div>
+
+  </div> -->
+  <!-- /.row -->
+  <nav class="mt-5">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+        aria-controls="nav-home" aria-selected="true">Descripción</a>
+      <!-- <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+        aria-controls="nav-profile" aria-selected="false">Especificaciones</a>
+      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+        aria-controls="nav-contact" aria-selected="false">Opiniones</a> -->
+    </div>
+  </nav>
+  <div class="tab-content mt-3 mb-3" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">{{product?.description}}</div>
+    <!-- <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Lorem ipsum 
+    </div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div> -->
+  </div>
+
+</div>
+<!-- /.container -->
+<app-footer></app-footer>

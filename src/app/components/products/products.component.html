@@ -1,0 +1,28 @@
+<p-toast key="toastAdmin" position="top-right" class="custom-toast"></p-toast>
+<app-loader [loading]="loading"></app-loader>
+<app-navigation></app-navigation>
+<div class="container mt-3 mb-3">
+  <h2 class="d-block">Productos - Categoria {{nameCategory}}</h2>
+  <hr>
+  <div class="row animate__animated animate__fadeIn">
+      <div *ngFor="let product of products" class="col-md-4">
+          <div class="card text-center mt-2">
+              <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                  {{product.productName}}
+              </div>
+              <div class="" style="cursor: pointer;">
+                <a (click)="viewProduct(product.id)"><img [src]="product.image" class="img-card" alt=""></a>
+              </div>
+              <div class="card-body">   
+                  <div class="d-flex justify-content-between">
+                        <strong class="text-red">{{product.price | number}} pts</strong>
+                        <strong>Stock {{product.stock | number}}</strong>
+                  </div> 
+                  <p>{{product.description | limitedText: 50}}</p>
+                  <a class="btn btn-outline-info btn-block" (click)="addCart(product)"><i class="fa fa-shopping-cart"></i> Agregar al carrito</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<app-footer></app-footer>
